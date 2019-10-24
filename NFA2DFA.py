@@ -15,10 +15,12 @@ def isContained(cp, newVal):
 
 def nfa2dfa(nfa):
     n =  len(nfa.keys())
+    print(n)
     k = 2**n -1
 
     alphabet = []
     nfakeys = list(nfa)
+    print(nfakeys)
     for i in range(n):
         val = nfakeys[i]
         alphabet.append([val])

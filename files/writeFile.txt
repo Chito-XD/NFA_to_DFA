@@ -1,20 +1,32 @@
-this is line 1
-this is line 2
-this is line 3
-this is line 4
-this is line 5
-this is line 6
-this is line 7
-this is line 8
-this is line 9
-this is line 10
-this is line 11
-this is line 12
-this is line 13
-this is line 14
-this is line 15
-this is line 16
-this is line 17
-this is line 18
-this is line 19
-this is line 20
+('0', '') -> {}
+('1', '') -> {}
+('0', 'p') -> {'p', 'q'}
+('1', 'p') -> {'p'}
+('0', 'q') -> {'r'}
+('1', 'q') -> {'r'}
+('0', 'r') -> {'s'}
+('1', 'r') -> {}
+('0', 's') -> {'s'}
+('1', 's') -> {'s'}
+('0', 'p, q') -> {'p', 'q', 'r'}
+('1', 'p, q') -> {'p', 'r'}
+('0', 'p, r') -> {'s', 'p', 'q'}
+('1', 'p, r') -> {'p'}
+('0', 'p, s') -> {'s', 'p', 'q'}
+('1', 'p, s') -> {'s', 'p'}
+('0', 'q, r') -> {'s', 'r'}
+('1', 'q, r') -> {'r'}
+('0', 'p, q, r') -> {'s', 'p', 'q', 'r'}
+('1', 'p, q, r') -> {'p', 'r'}
+('0', 'q, s') -> {'s', 'r'}
+('1', 'q, s') -> {'s', 'r'}
+('0', 'p, q, s') -> {'s', 'p', 'q', 'r'}
+('1', 'p, q, s') -> {'s', 'p', 'r'}
+('0', 'r, s') -> {'s'}
+('1', 'r, s') -> {'s'}
+('0', 'p, r, s') -> {'s', 'p', 'q'}
+('1', 'p, r, s') -> {'s', 'p'}
+('0', 'q, r, s') -> {'s', 'r'}
+('1', 'q, r, s') -> {'s', 'r'}
+('0', 'p, q, r, s') -> {'s', 'p', 'q', 'r'}
+('1', 'p, q, r, s') -> {'s', 'p', 'r'}
