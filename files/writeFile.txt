@@ -1,3 +1,9 @@
+The states for the DFA are:
+[['p'], ['q'], ['r'], ['s'], ['p', 'q'], ['p', 'r'], ['p', 's'], ['q', 'r'], ['p', 'q', 'r'], ['q', 's'], ['p', 'q', 's'], ['r', 's'], ['p', 'r', 's'], ['q', 'r', 's'], ['p', 'q', 'r', 's']]
+
+The alphabet is: ['0', '1']
+
+The transition function is: 
 ('1', 'q') -> ['r']
 ('0', 'p, q') -> ['q', 'p', 'r']
 ('0', '') -> []

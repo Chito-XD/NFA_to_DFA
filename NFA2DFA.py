@@ -3,6 +3,7 @@ import re
 from itertools import chain
 
 states_NFA = set()  # All the states of the NFA 
+states_DFA = set() # All the states of the DFA
 input_datum_NFA = set() # All the possible inputs for the NFA
 nfa_trans_fun = dict()
 dfa_trans_fun = dict()
@@ -92,6 +93,7 @@ def make_dfa_trans_fun():
                 key1 = ""
                 key1 = ', '.join([str(el) for el in subset])
                 dfa_trans_fun[datum, key1] = values
+            states_DFA.add(key1)
     
 
 def make_nfa_trans_fun(reg):
@@ -130,6 +132,15 @@ def createFile():
     global dfa_trans_fun
     path = "./files/writeFile.txt"
     f = open(path, "w+")
+    states = "{}".format((conjunto_potencia))
+    f.write("The states for the DFA are:\n");
+    f.write("%s\n\n" %(states));
+
+    f.write("The alphabet is: ");
+    alfa = "{}".format(input_datum_NFA);
+    f.write("%s\n\n" %(alfa));
+
+    f.write("The transition function is: \n");
     for keys,values in dfa_trans_fun.items():
         transition = "{} -> {}".format(keys, list(values))
         f.write("%s\n" % (transition))
@@ -157,6 +168,6 @@ print('----')
 print('bien lo bueno')
 
 make_dfa_trans_fun()
-print('la funcion del dfa esssssssssssssssssssssssssssssssssssssss:')
+print('la funcion del dfa es:')
 print_trans_fun(dfa_trans_fun)
 createFile()
