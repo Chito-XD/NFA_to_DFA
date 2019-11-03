@@ -95,7 +95,7 @@ def make_dfa_trans_fun():
 
 def make_nfa_trans_fun(reg):
     
-    allTrans = re.findall("[^\(|\)|\,]+", reg);
+    allTrans = re.findall("[^\(|\)|\,]+", reg)
      # allTrans[i*3]  -> The input for the NFA
     # allTrans[i*3+1]  -> The state you start
     # allTrans[i*3+2]  -> The state you move to
@@ -131,22 +131,22 @@ def createFile():
     path = "./files/writeFile.txt"
     f = open(path, "w+")
     states = "{}".format((conjunto_potencia))
-    f.write("The states for the DFA are:\n");
-    f.write("%s\n\n" %(states));
+    f.write("The states for the DFA are:\n")
+    f.write("%s\n\n" %(states))
 
-    f.write("The alphabet is: ");
-    alfa = "{}".format(input_datum_NFA);
-    f.write("%s\n\n" %(alfa));
+    f.write("The alphabet is: ")
+    alfa = "{}".format(input_datum_NFA)
+    f.write("%s\n\n" %(alfa))
     
-    f.write("The accepted states are: ");
-    ac_st = "{}".format(accept_states);
-    f.write("%s\n\n" %(ac_st));
+    f.write("The accepted states are: ")
+    ac_st = "{}".format(accept_states)
+    f.write("%s\n\n" %(ac_st))
 
-    f.write("The initial state is: ");
-    q = "{}".format(q0);
-    f.write("%s\n\n" %(q));
+    f.write("The initial state is: ")
+    q = "{}".format(q0)
+    f.write("%s\n\n" %(q))
 
-    f.write("The transition function is: \n");
+    f.write("The transition function is: \n")
     for keys,values in dfa_trans_fun.items():
         transition = "{} -> {}".format(keys, list(values))
         f.write("%s\n" % (transition))
@@ -158,7 +158,7 @@ def readFile():
     f = open(path, "r")
     if f.mode == "r":
         contents = f.read()
-    x = re.findall("(\(.+\))", contents)[0];
+    x = re.findall("(\(.+\))", contents)[0]
     return x
 
 
