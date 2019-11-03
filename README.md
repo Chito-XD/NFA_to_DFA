@@ -2,6 +2,12 @@
 
 This project converts a NFA to its correct DFA
 
+# Team
+
+- Raziel Nicolás Martínez Castillo A01410695 
+- Emiliano Peredo Sánchez A01422326 
+- Edgar Rubén Salazar Lugo A0133879
+
 ## Instructions
 
 In order to run the program correctly it is neccessary a txt file which store the transition function of an NFA. This file must be inside the `files` folder.
